@@ -8,7 +8,6 @@
     <div id="after_submit"></div>
     <form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
         <?php
-
         require_once("config.php");
         $errors = array();
         $name = isset($_POST["name"]) ? $_POST["name"] : "";
@@ -49,23 +48,32 @@
                 }
             }
         }
-
-            var_dump($errors);
         ?>
         <div class="row">
             <label class="required" for="name">Your name:</label><br />
-            <input id="name" class="input" name="name" type="text" value="<?php echo $name; ?>" size="30" /><br />
+            <input id="name" class="input" name="name" type="text" value="<?php echo htmlspecialchars($name); ?>" size="30" /><br />
         </div>
         <div class="row">
             <label class="required" for="email">Your email:</label><br />
-            <input id="email" class="input" name="email" type="text" value="<?php echo $email; ?>" size="30" /><br />
+            <input id="email" class="input" name="email" type="text" value="<?php echo htmlspecialchars($email); ?>" size="30" /><br />
         </div>
         <div class="row">
             <label class="required" for="message">Your message:</label><br />
-            <textarea id="message" class="input" name="message" rows="7" cols="30"><?php echo $message; ?></textarea><br />
+            <~textarea id="message" class="input" name="message" rows="7" cols="30"><?php echo htmlspecialchars($message); ?></textarea><br />
         </div>
-        <input id="clear" name="clear" type="reset" value="Clear form" />
+        <input id="clear" name="clear" type="button" value="Clear form" onclick="clearForm()" />
         <input id="submit" name="submit" type="submit" value="Send email" />
     </form>
+    <script>
+        function clearForm() {
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+            const elements =Object.values(document.querySelectorAll("h5"));
+            for( let ele of elements){
+                ele.innerText="";
+            }
+        }
+    </script>
 </body>
 </html>
