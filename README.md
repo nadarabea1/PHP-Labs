@@ -23,3 +23,19 @@ This repository contains a collection of PHP labs for learning purposes. Each la
      - `config.php`: Configuration file containing settings such as the path of the file to store visit counts.
      - `Counter.txt`: Text file to store the visit count.
 
+# Glasses Shop Project
+
+Welcome to the OS39 Glasses Shop project! This project involves working with MySQL databases to create a database for a glasses shop and implement various functionalities related to data retrieval and pagination. 
+
+## Day 04 & Day 05 Tasks
+
+1. Create the database of the shop from the SQL dump file in the `resources` folder.
+2. Define constants in the config file for connection parameters, number of records to be displayed in a single page (set to 5), and a debug mode.
+3. Implement the `DbHandler` interface to encapsulate all the DB communication and querying functions in a `MYSQLHandler` class.
+4. Create pagination to get Next and Previous items.
+5. Add a 3rd column for more details, which when clicked, displays the item details in a new page.
+6. Add a function in the interface and class for searching a keyword in a certain column.
+7. Implement a search box at the top of the page to list all products and a button to show all records.
+
+
+
