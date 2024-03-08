@@ -1,3 +1,4 @@
+<!-- index.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,13 +12,18 @@
             justify-content: center;
             align-items: center;
         }
-        th,td{
+        th, td {
             border: 2px solid black;
         }
-        
     </style>
 </head>
 <body>
+    <form action="index.php" method="GET">
+        <label for="search">Search:</label>
+        <input type="text" id="search" name="search">
+        <input type="submit" value="Search">
+        <a href="index.php">Show All</a>
+    </form>
     <table>
         <tr>
             <th>ID</th>
@@ -28,7 +34,7 @@
             <tr>
                 <td><?= $item->id ?></td>
                 <td><?= $item->product_name ?></td>
-                <td><a href="index.php?item=<?=$item->id?>">more</a></td>
+                <td><a href="details.php?item=<?= $item->id ?>">more</a></td>
             </tr>
         <?php endforeach; ?>
     </table>

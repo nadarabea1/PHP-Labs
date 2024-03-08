@@ -3,6 +3,6 @@
         "illuminate/database":"^10.46"
     },
     "autoload": {
-        "files": ["config.php"]
+        "files": ["config.php", "details.php"]
     }
 }
